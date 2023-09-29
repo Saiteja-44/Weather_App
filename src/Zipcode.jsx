@@ -39,8 +39,3 @@ function Zipcode({ handleZipcodeSubmit }) {
 }
 
 export default Zipcode;
-
-
-
-
-
