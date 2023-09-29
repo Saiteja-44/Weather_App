@@ -3,6 +3,7 @@ import './style.css';
 
 function Zipcode({ handleZipcodeSubmit }) {
   const [inputZipcode, setInputZipcode] = useState('');
+  const [isCentered, setIsCentered] = useState(true);
 
   const handleInputChange = (e) => {
     setInputZipcode(e.target.value);
@@ -12,10 +13,11 @@ function Zipcode({ handleZipcodeSubmit }) {
     e.preventDefault();
     handleZipcodeSubmit(inputZipcode);
     setInputZipcode('');
+    setIsCentered(false); // Move to the top after submitting
   };
 
   return (
-    <div className="search">
+    <div className={`search ${isCentered ? 'centered' : ''}`}>
       <div className="input-container">
         <input
           type="text"

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import HourlyForecast from './HourlyForecast';
+import './style.css'; // Import your CSS file
+import Forecast from './Forecast'; // Import the Forecast component
 
 function capitalizeWordsAfterSpace(string) {
   return string
@@ -58,7 +59,13 @@ function WeatherDisplay({ weatherData }) {
               <p>Wind Speed</p>
             </div>
           </div>
-          <HourlyForecast hourlyData={weatherData.hourly.slice(0, 15)} />
+          {/* Integrate the Forecast component for both hourly and daily forecasts */}
+          {weatherData !== null ? (
+            <>
+              <Forecast forecastData={weatherData.hourly.slice(0, 15)} title="Hourly Forecast" />
+              <Forecast forecastData={weatherData.daily} title="Daily Forecast" />
+            </>
+          ) : null}
         </>
       ) : (
         <p>Please enter a valid ZIP code.</p>
