@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import './style.css';
+import './style.css'; // Import your CSS file
 import WeatherDisplay from './WeatherDisplay';
 import Zipcode from './Zipcode';
 import axios from 'axios';
 import 'font-awesome/css/font-awesome.min.css';
+
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
