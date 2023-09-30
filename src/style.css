@@ -22,6 +22,9 @@ p {
 h1 {
   font-size: 6rem;
 }
+h2{
+  font-size: 1.4rem;
+}
 
 /* App container styles */
 .app {
@@ -43,9 +46,13 @@ h1 {
   z-index: -1;
 }
 
+
 /* Search container styles */
 .app .search {
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   padding: 1rem;
   transition: all 0.3s ease; /* Add a transition for smooth movement */
 }
@@ -53,24 +60,36 @@ h1 {
 /* Center the input when isCentered is true */
 .app .search.centered {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  
+}
+
+.app .landingimg{
+  width: 2.5rem;
+  height:auto;
+}
+.app .search.centered .landingimg{
+  width: 6rem;
+  height:auto;
 }
 
 .app .input-container {
   position: relative;
   display: inline-block;
-  max-width: 900px;
+  max-width: 75%;
   width: 70%;
   text-align: left;
+  margin-left: 1.5rem;
   transition: all 0.8s ease; /* Add a transition for smooth movement */
 }
 
 /* Style for the input when isCentered is true */
 .app .search.centered .input-container {
-  width: 80%;
-  max-width: 80%;
+  width: 70%;
+  max-width: 900px;
 }
 
 .app input {
