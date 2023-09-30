@@ -45,27 +45,29 @@ function WeatherDisplay({ weatherData }) {
               </div>
             </div>
           </div>
-          <div className="bottom">
-            <div className="feels">
-              <p className="bold">{weatherData.current.feels_like.toFixed()}°F</p>
-              <p>Feels Like</p>
+          <div className="down-container">
+            <div className="bottom">
+              <div className="feels">
+                <p className="bold">{weatherData.current.feels_like.toFixed()}°F</p>
+                <p>Feels Like</p>
+              </div>
+              <div className="humidity">
+                <p className="bold">{weatherData.current.humidity}%</p>
+                <p>Humidity</p>
+              </div>
+              <div className="wind">
+                <p className="bold">{weatherData.current.wind_speed.toFixed()} MPH</p>
+                <p>Wind Speed</p>
+              </div>
             </div>
-            <div className="humidity">
-              <p className="bold">{weatherData.current.humidity}%</p>
-              <p>Humidity</p>
-            </div>
-            <div className="wind">
-              <p className="bold">{weatherData.current.wind_speed.toFixed()} MPH</p>
-              <p>Wind Speed</p>
-            </div>
+            {weatherData !== null ? (
+              <>
+                <Forecast forecastData={weatherData.hourly.slice(0, 15)} title="Hourly Forecast" />
+                <Forecast forecastData={weatherData.daily} title="Daily Forecast" />
+              </>
+            ) : null}
           </div>
-          {/* Integrate the Forecast component for both hourly and daily forecasts */}
-          {weatherData !== null ? (
-            <>
-              <Forecast forecastData={weatherData.hourly.slice(0, 15)} title="Hourly Forecast" />
-              <Forecast forecastData={weatherData.daily} title="Daily Forecast" />
-            </>
-          ) : null}
+
         </>
       ) : (
         <p>Please enter a valid ZIP code.</p>
