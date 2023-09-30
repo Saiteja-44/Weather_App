@@ -36,7 +36,7 @@ h2{
 
 .app:before {
   content: '';
-  background: url('./assets/rainmou.jpg') no-repeat center center/cover;
+  background: url('./assets/landing.jpg') no-repeat center center/cover;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -44,6 +44,38 @@ h2{
   left: 0;
   z-index: -1;
 }
+
+.app.thunderstorm {
+  background: url('./assets/rainmou.jpg') no-repeat center center/cover;
+}
+
+.app.drizzle {
+  background: url('./assets/rain.jpg') no-repeat center center/cover;
+}
+
+.app.rain {
+  background: url('./assets/rain.jpg') no-repeat center center/cover;
+}
+
+.app.snow {
+  background: url('./assets/snow.jpg') no-repeat center center/cover;
+}
+
+.app.clear {
+  background: url('./assets/clear.jpg') no-repeat center center/cover;
+}
+
+.app.clouds {
+  background: url('./assets/cloud.jpg') no-repeat center center/cover;
+  width: 100%;
+  height: 120vh;
+}
+
+.app.other-conditions {
+  background: url('./assets/other.jpg') no-repeat center center/cover;
+}
+
+
 
 
 /* Search container styles */
@@ -133,6 +165,8 @@ h2{
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  overflow-y: auto;
+  max-height: 100%;
 }
 
 /* Top section styles */
@@ -170,6 +204,9 @@ h2{
   flex-direction: column;
   justify-content: center;
 }
+
+
+
 /* Forecast container styles */
 .forecast {
   width: 100%;
@@ -177,7 +214,7 @@ h2{
   margin: 1rem auto 1rem;
   padding: 1rem;
   border-radius: 12px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.32);
 }
 
 /* Forecast title styles */
@@ -220,7 +257,7 @@ h2{
 
 /* Hover effect for forecast toggle button */
 .forecast .forecast-toggle-container:hover {
-  background-color: #aca6a6; /* Change background color on hover */
+  background-color: #cbc4c4; /* Change background color on hover */
 }
 
 /* Active state styles for forecast toggle button */
@@ -281,7 +318,7 @@ h2{
   margin: 1rem auto;
   padding: 1rem;
   border-radius: 12px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.32);
 }
 
 /* Bold text styles */

@@ -5,7 +5,6 @@ import Zipcode from './Zipcode';
 import axios from 'axios';
 import 'font-awesome/css/font-awesome.min.css';
 
-
 function App() {
   const [weatherData, setWeatherData] = useState(null);
   const apiKey = '938cc58fae1c1a679c22bbbd14c27c3b';
@@ -36,7 +35,7 @@ function App() {
   };
 
   return (
-    <div className="app">
+    <div className={`app ${weatherData ? weatherData.current.weather[0].description.toLowerCase() : ''}`}>
       <Zipcode handleZipcodeSubmit={handleZipcodeSubmit} />
       {weatherData !== null ? (
         <WeatherDisplay weatherData={weatherData} />
