@@ -47,32 +47,44 @@ h2{
 
 .app.thunderstorm {
   background: url('./assets/rainmou.jpg') no-repeat center center/cover;
+  width: 100%;
+  height: 150vh;
 }
 
 .app.drizzle {
   background: url('./assets/rain.jpg') no-repeat center center/cover;
+  width: 100%;
+  height: 150vh;
 }
 
 .app.rain {
   background: url('./assets/rain.jpg') no-repeat center center/cover;
+  width: 100%;
+  height: 150vh;
 }
 
 .app.snow {
   background: url('./assets/snow.jpg') no-repeat center center/cover;
+  width: 100%;
+  height: 150vh;
 }
 
 .app.clear {
   background: url('./assets/clear.jpg') no-repeat center center/cover;
+  width: 100%;
+  height: 150vh;
 }
 
 .app.clouds {
   background: url('./assets/cloud.jpg') no-repeat center center/cover;
   width: 100%;
-  height: 120vh;
+  height: 150vh;
 }
 
 .app.other-conditions {
   background: url('./assets/other.jpg') no-repeat center center/cover;
+  width: 100%;
+  height: 150vh;
 }
 
 
@@ -84,10 +96,9 @@ h2{
   justify-content: flex-start;
   align-items: center;
   padding: 1rem;
-  transition: all 0.3s ease; /* Add a transition for smooth movement */
+  transition: all 0.3s ease;
 }
 
-/* Center the input when isCentered is true */
 .app  .search.centered .search-container {
   display: flex;
   flex-direction: column;
@@ -117,17 +128,16 @@ h2{
   text-align: left;
   margin-left: 11%;
   margin-right: 3%;
-  transition: all 0.8s ease; /* Add a transition for smooth movement */
+  transition: all 0.8s ease; 
 }
 
 .error-message {
-  font-size: 16px; /* Adjust the font size as needed */
-  color: rgb(254, 27, 27); /* Change the text color to red */
-  margin-top: 10px; /* Add some space between the input and the error message */
+  font-size: 16px; 
+  color: rgb(254, 27, 27); 
+  margin-top: 10px; 
 }
 
 
-/* Style for the input when isCentered is true */
 .app .search.centered .search-container .input-container {
   width: 70%;
   max-width: 900px;
@@ -141,10 +151,10 @@ h2{
   background: rgba(199, 197, 197, 0.293);
   color: #f8f8f8;
   width: 100%;
-  transition: all 0.3s ease; /* Add a transition for smooth movement */
+  transition: all 0.3s ease; 
 }
 .app input::placeholder {
-  color: #e6dddd; /* Replace with your desired color code */
+  color: #e6dddd; 
 }
 
 .fa-search {
@@ -284,16 +294,20 @@ h2{
 
 /* Custom scrollbar styles for forecast scroll container */
 .forecast-scroll::-webkit-scrollbar {
-  width: 8px; /* Set the width of the scrollbar */
+  width: 8px; 
   height: 8px;
 }
 
 .forecast-scroll::-webkit-scrollbar-track {
-  background-color: rgba(0, 0, 0, 0.2); /* Track color */
+  background-color: rgba(85, 84, 84, 0.298); 
 }
 
-.forecast-scroll::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.2); /* Thumb color */
+.forecast-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(234, 229, 229, 0.776); 
+}
+
+.forecast-scroll::-webkit-scrollbar-thumb:active {
+  background-color: rgba(190, 189, 189, 0.671); 
 }
 
 /* Forecast item styles */
