@@ -71,8 +71,9 @@ If you prefer to use Docker for deployment, follow these steps:
 
 4. To stop and remove the Docker container, use the following commands.
 
-   docker stop {container-name}.
-   docker rm {container-name}.
+   docker stop {container-name}
+
+   docker rm {container-name}
 
 ## Usage
 
