@@ -45,7 +45,7 @@ Follow these steps to get started with the Weather App:
    cd coding-challenge
    npm install
 
-3. Obtain an API key from OpenWeatherMap by signing up at [OpenWeatherMap API](https://openweathermap.org/api). Replace `YOUR_API_KEY` in `App.js` with your actual API key.
+3. Obtain an API key from OpenWeatherMap by signing up at [OpenWeatherMap API](https://openweathermap.org/api). Replace `YOUR_API_KEY` in `App.jsx` and `Zipcode.jsx` with your actual API key.
 
 4. Build and run the app:
 
