@@ -59,20 +59,20 @@ If you prefer to use Docker for deployment, follow these steps:
 
 1. Build a Docker image for the Weather App.
 
-docker build -t coding-challenge .
+   docker build -t coding-challenge .
 
 2. Run a Docker container from the built image.
 
-docker run -d -p 3000:80 coding-challenge
+   docker run -d -p 3000:80 coding-challenge
 
 3. To see a list of running containers, use the following command.
 
-docker ps
+   docker ps
 
 4. To stop and remove the Docker container, use the following commands.
 
-docker stop <container-name>
-docker rm <container-name>
+   docker stop {container-name}.
+   docker rm {container-name}.
 
 ## Usage
 
@@ -86,7 +86,9 @@ docker rm <container-name>
 - Axios
 - CSS
 - OpenWeatherMap APIs
-- Acknowledgments
+
+## Acknowledgments
+
 - Weather data provided by OpenWeatherMap.
 - Background images sourced from web.
 
