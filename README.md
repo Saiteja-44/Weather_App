@@ -24,13 +24,9 @@ Welcome to the Weather App project! This single-page React application allows yo
 
 - The app features collapsible forecast sections that allow you to expand and collapse weather forecasts with a horizontal scroll bar. A user-friendly button provides a smooth expand/collapse effect, making it easy to access detailed forecasts.
 
-### 6. Docker Support
+### 6. Easy Deployment with Docker
 
 - A Dockerfile is included in the project, enabling you to containerize the app effortlessly. If you prefer to run the Weather App in a Docker container, instructions are provided to assist you.
-
-### 7. Easy Deployment with Docker
-
-- Easy Deployment with Docker: Provided are Docker commands to build and run the app in a Docker container, making it easy to deploy and run the Weather App.
 
 ## Getting Started
 
@@ -64,16 +60,6 @@ If you prefer to use Docker for deployment, follow these steps:
 2. Run a Docker container from the built image.
 
    docker run -d -p 3000:80 coding-challenge
-
-3. To see a list of running containers, use the following command.
-
-   docker ps
-
-4. To stop and remove the Docker container, use the following commands.
-
-   docker stop {container-name}
-
-   docker rm {container-name}
 
 ## Usage
 
