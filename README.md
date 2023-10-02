@@ -28,32 +28,51 @@ Welcome to the Weather App project! This single-page React application allows yo
 
 - A Dockerfile is included in the project, enabling you to containerize the app effortlessly. If you prefer to run the Weather App in a Docker container, instructions are provided to assist you.
 
+### 7. Easy Deployment with Docker
+
+- Easy Deployment with Docker: Provided are Docker commands to build and run the app in a Docker container, making it easy to deploy and run the Weather App.
+
 ## Getting Started
 
 Follow these steps to get started with the Weather App:
 
 1. Clone the repository to your local machine:
 
-   ```bash
-   git clone https://github.com/yourusername/weather-app.git
-   ```
+   git clone https://github.com/yourusername/coding-challenge.git
 
 2. Install the required dependencies:
 
-   ```bash
-   cd weather-app
+   cd coding-challenge
    npm install
-   ```
 
 3. Obtain an API key from OpenWeatherMap by signing up at [OpenWeatherMap API](https://openweathermap.org/api). Replace `YOUR_API_KEY` in `App.js` with your actual API key.
 
 4. Build and run the app:
 
-   ```bash
    npm start
-   ```
 
 5. Open your web browser and access the app at [http://localhost:3000](http://localhost:3000).
+
+### Docker Deployment
+
+If you prefer to use Docker for deployment, follow these steps:
+
+1. Build a Docker image for the Weather App.
+
+docker build -t coding-challenge .
+
+2. Run a Docker container from the built image.
+
+docker run -d -p 3000:80 coding-challenge
+
+3. To see a list of running containers, use the following command.
+
+docker ps
+
+4. To stop and remove the Docker container, use the following commands.
+
+docker stop <container-name>
+docker rm <container-name>
 
 ## Usage
 

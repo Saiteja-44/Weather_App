@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './style.css'; // Import your CSS file
+import './style.css';
 import WeatherDisplay from './WeatherDisplay';
 import Zipcode from './Zipcode';
 import axios from 'axios';
