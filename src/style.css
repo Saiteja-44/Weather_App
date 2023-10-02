@@ -18,7 +18,6 @@ body {
 p {
   font-size: 1.6rem;
 }
-
 h1 {
   font-size: 6rem;
 }
@@ -29,7 +28,7 @@ h2{
 /* App container styles */
 .app {
   width: 100%;
-  height: 100vh;
+  height: 150vh;
   position: relative;
   background-color: rgba(0, 0, 0, 0.4);
   color: #fff;
@@ -37,7 +36,7 @@ h2{
 
 .app:before {
   content: '';
-  background: url('./assets/rainmou.jpg') no-repeat center center/cover;
+  background: url('./assets/landing.jpg') no-repeat center center/cover;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -46,48 +45,100 @@ h2{
   z-index: -1;
 }
 
-
-/* Search container styles */
-.app .search {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  transition: all 0.3s ease; /* Add a transition for smooth movement */
+.app.thunderstorm {
+  background: url('./assets/rainmou.jpg') no-repeat center center/cover;
+  width: 100%;
+  height: 150vh;
 }
 
-/* Center the input when isCentered is true */
-.app .search.centered {
+.app.drizzle {
+  background: url('./assets/rain.jpg') no-repeat center center/cover;
+  width: 100%;
+  height: 150vh;
+}
+
+.app.rain {
+  background: url('./assets/rain.jpg') no-repeat center center/cover;
+  width: 100%;
+  height: 150vh;
+}
+
+.app.snow {
+  background: url('./assets/snow.jpg') no-repeat center center/cover;
+  width: 100%;
+  height: 150vh;
+}
+
+.app.clear {
+  background: url('./assets/clear.jpg') no-repeat center center/cover;
+  width: 100%;
+  height: 150vh;
+}
+
+.app.clouds {
+  background: url('./assets/cloud.jpg') no-repeat center center/cover;
+  width: 100%;
+  height: 150vh;
+}
+
+.app.other-conditions {
+  background: url('./assets/other.jpg') no-repeat center center/cover;
+  width: 100%;
+  height: 150vh;
+}
+
+
+
+
+/* Search container styles */
+.app .search-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.app  .search.centered .search-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  
-}
-
-.app .landingimg{
-  width: 2.5rem;
-  height:auto;
-}
-.app .search.centered .landingimg{
-  width: 6rem;
-  height:auto;
-}
-
-.app .input-container {
   position: relative;
-  display: inline-block;
-  max-width: 75%;
+  top: 30%; 
+  transform: translateY(-30%);
+}
+
+.app .search-container .landingimg{
+  width: 3.5rem;
+  height:auto;
+  margin-right: .25rem;
+}
+
+.app  .search.centered .search-container .landingimg{
+  width: 7rem;
+  height:auto;
+}
+
+.app .search-container .input-container {
+  position: relative;
+  max-width: 70%;
   width: 70%;
   text-align: left;
-  margin-left: 1.5rem;
-  transition: all 0.8s ease; /* Add a transition for smooth movement */
+  margin-left: 11%;
+  margin-right: 3%;
+  transition: all 0.8s ease; 
 }
 
-/* Style for the input when isCentered is true */
-.app .search.centered .input-container {
+.error-message {
+  font-size: 16px; 
+  color: rgba(255, 255, 255, 0.952); 
+  margin-top: 10px; 
+}
+
+
+.app .search.centered .search-container .input-container {
   width: 70%;
   max-width: 900px;
 }
@@ -97,10 +148,13 @@ h2{
   font-size: 1.2rem;
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.8);
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(199, 197, 197, 0.293);
   color: #f8f8f8;
   width: 100%;
-  transition: all 0.3s ease; /* Add a transition for smooth movement */
+  transition: all 0.3s ease; 
+}
+.app input::placeholder {
+  color: #e6dddd; 
 }
 
 .fa-search {
@@ -112,30 +166,43 @@ h2{
 
 /* Weather container styles */
 .weather {
-  max-width: 900px;
-  height: 700px;
+  width: 100%;
+  height: auto;
   margin: auto;
   padding: 0 1rem;
   position: relative;
-  top: 10%;
+  top: 8%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+  overflow-y: auto;
+  max-height: 100%;
 }
 
 /* Top section styles */
 .app .top {
   width: 100%;
-  margin: 1rem auto;
+  margin-top: 1rem;
+  margin-bottom: 5rem;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .app .top .topleft {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-self: auto;
+  border-radius: 8px;
+  padding: 6px;
+}
+
+.app .top .topleft:hover{
+  transform: scale(1.1); 
+  transition: transform 0.2s ease, border 0.2s ease;
 }
 
 .app .top .topright {
@@ -143,6 +210,12 @@ h2{
   flex-direction: column;
   align-items: center;
   justify-self: auto;
+  border-radius: 8px;
+  padding: 6px;
+}
+.app .top .topright:hover{
+  transform: scale(1.05); 
+  transition: transform 0.2s ease, border 0.2s ease;
 }
 
 /* Weather icon styles */
@@ -150,14 +223,22 @@ h2{
   width: 6.5rem;
   height: 6.5rem;
 }
+.app .down-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
 
 /* Forecast container styles */
 .forecast {
   width: 100%;
+  max-width: 70%;
   margin: 1rem auto 1rem;
   padding: 1rem;
   border-radius: 12px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.32);
 }
 
 /* Forecast title styles */
@@ -168,6 +249,14 @@ h2{
   cursor: pointer;
   position: relative;
 }
+
+/* Apply 3D impression effect on hover */
+.forecast:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 0 10px rgb(8, 8, 8); 
+  transition: transform 0.2s ease, box-shadow 0.2s ease; 
+}
+
 
 .forecast-title .forecast-toggle-button {
   display: none;
@@ -193,22 +282,29 @@ h2{
   margin: 8px 4px 4px 3px;
 }
 
-/* Show forecast toggle button on hover */
 .forecast:hover .forecast-title .forecast-toggle-container .forecast-toggle-button {
   display: inline;
 }
 
-/* Hover effect for forecast toggle button */
 .forecast .forecast-toggle-container:hover {
-  background-color: #aca6a6; /* Change background color on hover */
+  background-color: #cbc4c4; 
 }
 
-/* Active state styles for forecast toggle button */
 .forecast.active .forecast-title .forecast-toggle-container .forecast-toggle-button {
   transform: rotate(180deg);
   transition: transform 0.4s ease-in-out;
   margin-top: 2px;
   margin-bottom: 5px;
+}
+
+.forecast-container{
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.forecast.active .forecast-container{
+  max-height: 1000px;
 }
 
 /* Forecast scroll container styles */
@@ -221,22 +317,26 @@ h2{
   overflow-x: auto;
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.2) rgba(0, 0, 0, 0.2);
-  gap: 20px; /* Add space between containers */
+  gap: 20px; 
   padding-bottom: 25px;
 }
 
 /* Custom scrollbar styles for forecast scroll container */
 .forecast-scroll::-webkit-scrollbar {
-  width: 8px; /* Set the width of the scrollbar */
+  width: 8px; 
   height: 8px;
 }
 
 .forecast-scroll::-webkit-scrollbar-track {
-  background-color: rgba(0, 0, 0, 0.2); /* Track color */
+  background-color: rgba(85, 84, 84, 0.298); 
 }
 
-.forecast-scroll::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.2); /* Thumb color */
+.forecast-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(234, 229, 229, 0.776); 
+}
+
+.forecast-scroll::-webkit-scrollbar-thumb:active {
+  background-color: rgba(190, 189, 189, 0.671); 
 }
 
 /* Forecast item styles */
@@ -257,13 +357,42 @@ h2{
   justify-content: space-evenly;
   text-align: center;
   width: 100%;
+  max-width: 70% ;
   margin: 1rem auto;
   padding: 1rem;
   border-radius: 12px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.32);
+  border-radius: 8px;
+}
+.app .bottom:hover{
+  transform: scale(1.1); /* Scale up slightly on hover */
+  transition: transform 0.2s ease, border 0.2s ease;
 }
 
 /* Bold text styles */
 .bold {
   font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .app .search-container .landingimg {
+    margin-left: 0; 
+  }
+  .app .top {
+    flex-direction: column; 
+  }
+
+  .app .top .topleft,
+  .app .top .topright {
+    text-align: center; 
+  }
+
+  .app .bottom {
+    flex-direction: column;
+    align-items: center; 
+  }
+
+  .forecast {
+    max-width: 100%;
+  }
 }
