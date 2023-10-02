@@ -28,7 +28,7 @@ h2{
 /* App container styles */
 .app {
   width: 100%;
-  height: 100vh;
+  height: 150vh;
   position: relative;
   background-color: rgba(0, 0, 0, 0.4);
   color: #fff;
@@ -133,7 +133,7 @@ h2{
 
 .error-message {
   font-size: 16px; 
-  color: rgb(254, 27, 27); 
+  color: rgba(255, 255, 255, 0.952); 
   margin-top: 10px; 
 }
 
@@ -195,6 +195,14 @@ h2{
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-self: auto;
+  border-radius: 8px;
+  padding: 6px;
+}
+
+.app .top .topleft:hover{
+  transform: scale(1.1); 
+  transition: transform 0.2s ease, border 0.2s ease;
 }
 
 .app .top .topright {
@@ -202,6 +210,12 @@ h2{
   flex-direction: column;
   align-items: center;
   justify-self: auto;
+  border-radius: 8px;
+  padding: 6px;
+}
+.app .top .topright:hover{
+  transform: scale(1.05); 
+  transition: transform 0.2s ease, border 0.2s ease;
 }
 
 /* Weather icon styles */
@@ -236,6 +250,14 @@ h2{
   position: relative;
 }
 
+/* Apply 3D impression effect on hover */
+.forecast:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 0 10px rgb(8, 8, 8); 
+  transition: transform 0.2s ease, box-shadow 0.2s ease; 
+}
+
+
 .forecast-title .forecast-toggle-button {
   display: none;
 }
@@ -260,22 +282,29 @@ h2{
   margin: 8px 4px 4px 3px;
 }
 
-/* Show forecast toggle button on hover */
 .forecast:hover .forecast-title .forecast-toggle-container .forecast-toggle-button {
   display: inline;
 }
 
-/* Hover effect for forecast toggle button */
 .forecast .forecast-toggle-container:hover {
-  background-color: #cbc4c4; /* Change background color on hover */
+  background-color: #cbc4c4; 
 }
 
-/* Active state styles for forecast toggle button */
 .forecast.active .forecast-title .forecast-toggle-container .forecast-toggle-button {
   transform: rotate(180deg);
   transition: transform 0.4s ease-in-out;
   margin-top: 2px;
   margin-bottom: 5px;
+}
+
+.forecast-container{
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.forecast.active .forecast-container{
+  max-height: 1000px;
 }
 
 /* Forecast scroll container styles */
@@ -288,7 +317,7 @@ h2{
   overflow-x: auto;
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.2) rgba(0, 0, 0, 0.2);
-  gap: 20px; /* Add space between containers */
+  gap: 20px; 
   padding-bottom: 25px;
 }
 
@@ -333,6 +362,11 @@ h2{
   padding: 1rem;
   border-radius: 12px;
   background-color: rgba(255, 255, 255, 0.32);
+  border-radius: 8px;
+}
+.app .bottom:hover{
+  transform: scale(1.1); /* Scale up slightly on hover */
+  transition: transform 0.2s ease, border 0.2s ease;
 }
 
 /* Bold text styles */
@@ -342,23 +376,23 @@ h2{
 
 @media (max-width: 768px) {
   .app .search-container .landingimg {
-    margin-left: 0; /* Adjust the margin for smaller screens */
+    margin-left: 0; 
   }
   .app .top {
-    flex-direction: column; /* Stack items vertically on smaller screens */
+    flex-direction: column; 
   }
 
   .app .top .topleft,
   .app .top .topright {
-    text-align: center; /* Center align content on smaller screens */
+    text-align: center; 
   }
 
   .app .bottom {
-    flex-direction: column; /* Stack items vertically on smaller screens */
-    align-items: center; /* Center align items on smaller screens */
+    flex-direction: column;
+    align-items: center; 
   }
 
   .forecast {
-    max-width: 100%; /* Adjust maximum width for smaller screens */
+    max-width: 100%;
   }
 }

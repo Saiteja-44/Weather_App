@@ -1,34 +1,49 @@
-import React, { useState } from 'react';
+import React, { useEffect,useState } from 'react';
 import './style.css';
 import Icon from "./assets/weather.svg";
+import axios from 'axios';
 
 function Zipcode({ handleZipcodeSubmit }) {
   const [inputZipcode, setInputZipcode] = useState('');
-  const [isCentered, setIsCentered] = useState(true); // Add isCentered state
-  const [isInvalidZipcode, setIsInvalidZipcode] = useState(false); // Add isInvalidZipcode state
+  const [isCentered, setIsCentered] = useState(true); 
+  const [isInvalidZipcode, setIsInvalidZipcode] = useState(false); 
+  const apiKey = "938cc58fae1c1a679c22bbbd14c27c3b"
 
   const handleInputChange = (e) => {
     setInputZipcode(e.target.value);
-    setIsInvalidZipcode(false); // Reset the invalid state when input changes
+    setIsInvalidZipcode(false); 
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (inputZipcode.trim() !== '') {
-      // Replace the condition with your actual ZIP code validation logic
       if (inputZipcode.length === 5 && /^\d+$/.test(inputZipcode)) {
-        handleZipcodeSubmit(inputZipcode);
-        setIsCentered(false); // Move the input field to the top
-        setIsInvalidZipcode(false); // Reset the invalid state
+        try {
+          const zipResponse = await axios.get(
+            `http://api.openweathermap.org/geo/1.0/zip?zip=${inputZipcode}&appid=${apiKey}`
+          );
+        
+          if (zipResponse.status === 200) {
+            handleZipcodeSubmit(inputZipcode);
+            setIsCentered(false); 
+          } else {
+            console.error('API Error:', zipResponse.status);
+          }
+        } catch (error) {
+          console.error('Error:', error);
+          setIsInvalidZipcode(true);
+        }        
       } else {
-        setIsInvalidZipcode(true); // Set invalid state if ZIP code is not valid
+        setIsInvalidZipcode(true);
       }
     }
   };
-
+  useEffect(() => {
+    console.log(isInvalidZipcode);
+  }, [isInvalidZipcode]);
   return (
     <div className={`search ${isCentered ? 'centered' : ''}`}>
-      <div className={`search-container ${isInvalidZipcode ? 'invalid' : ''}`}>
+      <div className="search-container">
         <div className="imagecontainer">
           <img src={Icon} alt="Landing" className="landingimg" />
         </div>
@@ -59,3 +74,5 @@ function Zipcode({ handleZipcodeSubmit }) {
 }
 
 export default Zipcode;
+
+
