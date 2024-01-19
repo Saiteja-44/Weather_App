@@ -2,14 +2,6 @@
 
 Welcome to the Weather App project! This single-page React application allows you to retrieve weather information based on ZIP codes. The app utilizes data from the OpenWeatherMap API to provide real-time weather data, hourly forecasts, and daily forecasts for the specified location.
 
-## Features
-
-### 1. Dynamic Backgrounds
-
-- The app dynamically changes its background image based on the weather description at the specified location. Different backgrounds are displayed for various weather conditions, enhancing the user experience.
-
-### 2. Responsive Design
-
 - Designed with mobile devices in mind, the Weather App offers a responsive user interface that adapts seamlessly to various screen dimensions. Whether you're using a smartphone, tablet, or desktop computer, you can access weather data with ease.
 
 ### 3. ZIP Code Validation
